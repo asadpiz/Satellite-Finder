@@ -1,0 +1,55 @@
+#include <Wire.h>
+#include <LSM303.h>
+#include <Servo.h>
+
+Servo myservo1;
+LSM303 compass;
+
+int val_0;
+
+void setup() {
+  Serial.begin(9600);
+  myservo1.attach(9);
+  Wire.begin();
+  compass.init();
+  compass.enableDefault();
+  
+  /*
+  Calibration values; the default values of +/-32767 for each axis
+  lead to an assumed magnetometer bias of 0. Use the Calibrate example
+  program to determine appropriate values for your particular unit.
+  */
+  compass.m_min = (LSM303::vector<int16_t>){-760, -577, -509};
+  compass.m_max = (LSM303::vector<int16_t>){+694, +810, +407};
+}
+
+void loop() {
+  compass.read();
+  
+  /*
+  When given no arguments, the heading() function returns the angular
+  difference in the horizontal plane between a default vector and
+  north, in degrees.
+  
+  The default vector is chosen by the library to point along the
+  surface of the PCB, in the direction of the top of the text on the
+  silkscreen. This is the +X axis on the Pololu LSM303D carrier and
+  the -Y axis on the Pololu LSM303DLHC, LSM303DLM, and LSM303DLH
+  carriers.
+  
+  To use a different vector as a reference, use the version of heading()
+  that takes a vector argument; for example, use
+  
+    compass.heading((LSM303::vector<int>){0, 0, 1});
+  
+  to use the +Z axis as a reference.
+  */
+  unsigned short int heading = compass.heading();
+  
+  Serial.println(heading);
+  val_0=map(heading,0,359,0,179);
+  Serial.println(val_0);
+  delay(1000);
+  myservo1.write(val_0);
+  delay(1000);
+}
