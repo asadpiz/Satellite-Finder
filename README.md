@@ -70,6 +70,28 @@ Accelerometer: ±2, ±4, or ±8 g
 Magnetometer: ±1.3, ±1.9, ±2.5, ±4.0, ±4.7, ±5.6, or ±8.1 gauss
 
 
+#Pinout
+#PIN	Description
+
+VIN	This is the main 2.6 – 5.5 V power supply connection. The SCL and SDA level shifters pull the I²C bus high bits up to this level.
+
+GND	The ground (0 V) connection for your power supply. Your I²C control source must also share a common ground with this board.
+
+1V8	Regulated 1.8 V output. Almost 150 mA is available to power external components.
+
+3V	Regulated 3.0 V output. Almost 300 mA is available to power external components.
+
+SCL	Level-shifted I²C clock line: HIGH is VIN, LOW is 0 V
+
+SDA	Level-shifted I²C data line: HIGH is VIN, LOW is 0 V
+
+DRDY	Magnetometer data ready indicator, a 1.8V-logic-level output. HIGH (1.8 V) indicates magnetometer data can be read. LOW (0 V) indicates the magnetometer is writing new data to the data registers. This output is not level-shifted.
+
+INT1	Inertial interrupt 1, a 1.8V-logic-level output. This output is not level-shifted.
+
+INT2	Inertial interrupt 2, a 1.8V-logic-level output. This output is not level-shifted.
+
+
 #See The Circuit from Here:
 
 https://www.dropbox.com/s/9xn38wysgn294pg/The%20Circuit.pdf?dl=0
