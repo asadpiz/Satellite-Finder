@@ -94,7 +94,7 @@ INT2	Inertial interrupt 2, a 1.8V-logic-level output. This output is not level-s
 
 #The Real Antenna:
 
-It's composed of two servo motors (FS61BB Digital) the first one is to calculate the horizontal position on plane (X-Y) and the second one to calculate the height on a plane (X-Z).
+It's composed of two servo motors (FS61BB Digital) the first one is to calculate the horizontal position on plane (X-Y) and the second one is to calculate the height on a plane (X-Z).
 
 #Specification of FS61BB:
 
@@ -107,12 +107,13 @@ Weight: 0.35 oz (9.8 g)
 Torque: 4.8V: 12.5 oz-in (0.90 kg-cm)
 Speed: 4.8V: 0.07 sec/60°
 
+#The Circuits:
 
-#The Circuit (Arduino + Accelerometer + one servo motor to calculate the horizontal position only):
+The Circuit (Arduino + Accelerometer + one servo motor to calculate the horizontal position only):
 
 https://www.dropbox.com/s/9xn38wysgn294pg/The%20Circuit.pdf?dl=0
 
-#The Circuit (Arduino + Accelerometer + real Antenna to calculate the horizonatl and vertical positions of the Satellite):
+The Circuit (Arduino + Accelerometer + real Antenna to calculate the horizonatl and vertical positions of the Satellite):
 
 https://www.dropbox.com/s/75d69z47jwrlvgn/The%20Final%20Circuit.docx.pdf?dl=0
 
