@@ -8,7 +8,7 @@ Satellite Finder Based on given data about the own position and global orientati
 
 #2-Lsm303dlh 3d compass and accelerometer
 
-#3-Servo
+#3-The Real-Antenna
 
 #Adruino due
 
@@ -92,14 +92,55 @@ INT1	Inertial interrupt 1, a 1.8V-logic-level output. This output is not level-s
 INT2	Inertial interrupt 2, a 1.8V-logic-level output. This output is not level-shifted.
 
 
-#See The Circuit from Here:
+#The Real Antenna:
+
+It's composed of two servo motors (FS61BB Digital) the first one is to calculate the horizontal position on plane (X-Y) and the second one to calculate the height on a plane (X-Z).
+
+#Specification of FS61BB:
+
+Fast, powerful 11 mm Nano Servo with tough carbon gears, ballrace and heavyduty output lever. With additional 23 mm long Servo arms (2-arm and cross). Supplied with heavy-duty 1.2 mm thick servo output lever.
+
+#Technical Data:
+
+Dimensions: 23 x 11.4 x 24.1 mm
+Weight: 0.35 oz (9.8 g)
+Torque: 4.8V: 12.5 oz-in (0.90 kg-cm)
+Speed: 4.8V: 0.07 sec/60°
+
+
+#The Circuit (Arduino + Accelerometer + one servo motor to calculate the horizontal position only):
 
 https://www.dropbox.com/s/9xn38wysgn294pg/The%20Circuit.pdf?dl=0
+
+#The Circuit (Arduino + Accelerometer + real Antenna to calculate the horizonatl and vertical positions of the Satellite):
+
+https://www.dropbox.com/s/75d69z47jwrlvgn/The%20Final%20Circuit.docx.pdf?dl=0
 
 
 #See The Videos from Here:
 
+Using the Accelerometer with one servo motor:
+
 https://www.dropbox.com/sh/htuu1hpfmnk415g/AAD2GUjNECwRT8vkOysh1xl9a?dl=0
+
+
+Using the Accelerometer with a real Antenna:
+
+2 separate servos with Accelerometer:
+
+https://www.dropbox.com/s/za8ziuvs0lzjoqz/2%20servos%20with%20Accelerometer.mp4?dl=0
+
+A real Antenna with Accelerometer: The First Experiment:
+
+https://www.dropbox.com/s/j648nepoj4qjqit/Antenna%20with%20Accelerometer%20%28the%20first%20Experiment%29.mp4?dl=0
+
+A real Antenna with Accelerometer: The Second Experiment: 
+
+https://www.dropbox.com/s/i2i4kh5xehxneov/Antenna%20with%20Accelerometer%20%28the%20second%20Experiment%29.mp4?dl=0
+
+
+
+
 
 
 
